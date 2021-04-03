@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
+  m_Name: RemoteConfigDataStoreAsset
+  m_EditorClassIdentifier: 
+  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"7df0d235-d0ea-4117-81d1-8db4046182ca\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"base_speed\",\r\n      \"type\": \"float\",\r\n     
+    \"value\": 20.0,\r\n      \"schemaId\": null\r\n    }\r\n  },\r\n  {\r\n    \"metadata\":
+    {\r\n      \"entityId\": \"0533aaf1-75ff-446a-8e3b-afc3847e832d\"\r\n    },\r\n   
+    \"rs\": {\r\n      \"key\": \"base_dash\",\r\n      \"value\": 40.0,\r\n     
+    \"type\": \"float\"\r\n    }\r\n  }\r\n]"
+  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"7df0d235-d0ea-4117-81d1-8db4046182ca\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"base_speed\",\r\n      \"type\": \"float\",\r\n     
+    \"value\": 20.0,\r\n      \"schemaId\": null\r\n    }\r\n  },\r\n  {\r\n    \"metadata\":
+    {\r\n      \"entityId\": \"0533aaf1-75ff-446a-8e3b-afc3847e832d\"\r\n    },\r\n   
+    \"rs\": {\r\n      \"key\": \"base_dash\",\r\n      \"value\": 40.0,\r\n     
+    \"type\": \"float\"\r\n    }\r\n  }\r\n]"
+  _environments: "[\r\n  {\r\n    \"projectId\": \"83f6d5b8-98a8-470c-ae66-07d56bddd74f\",\r\n   
+    \"name\": \"Production\",\r\n    \"id\": \"c213efeb-3aaf-4368-934f-275da9b4a6cd\",\r\n   
+    \"createdAt\": \"2021-04-02T12:36:29Z\",\r\n    \"updatedAt\": \"2021-04-02T12:36:29Z\",\r\n   
+    \"isDefault\": true\r\n  }\r\n]"
+  _rulesList: '[]'
+  _lastCachedRulesList: '[]'
