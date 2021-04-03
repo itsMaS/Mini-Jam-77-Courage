@@ -9,19 +9,14 @@ public class MeteorController : MonoBehaviour
     public static MeteorController Instance;
 
     [SerializeField] GameObject[] Meteors;
-    [SerializeField] int maxMeteors;
-    [SerializeField] float spawnInterval;
+
+    private GameConfig.MeteorConfig config { get => GameManager.Instance.config.meteor; }
 
     int meteorCount;
 
     private void Awake()
     {
         Instance = this;
-
-#if !UNITY_EDITOR
-        maxMeteors = ConfigManager.appConfig.GetInt("meteors_max");
-        spawnInterval = ConfigManager.appConfig.GetInt("meteors_spawn_interval");
-#endif
     }
     private void Start()
     {
@@ -32,8 +27,8 @@ public class MeteorController : MonoBehaviour
     {
         while(true)
         {
-            yield return new WaitForSeconds(spawnInterval);
-            if(meteorCount < maxMeteors)
+            yield return new WaitForSeconds(config.baseSpawnInterval);
+            if(meteorCount < config.baseMaxMeteors)
             {
                 meteorCount++;
                 Tile tile = SelectMeteorTile();

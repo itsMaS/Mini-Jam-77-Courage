@@ -11,38 +11,25 @@ public class PlayerController : MonoBehaviour
     public static PlayerController Instance;
 
     public UnityEvent onDash;
-
-    [SerializeField] private float baseSpeed;
-    [SerializeField] private float baseDash;
-    [SerializeField] private float baseRotationSpeed;
-    private float speed => baseSpeed;
-
+    private float speed => config.baseSpeed;
     private Rigidbody rb;
+    private Quaternion lookRotation;
+    private Tile currentTile;
 
-    Quaternion lookRotation;
-
-    [SerializeField] Color lit;
-    [SerializeField] Color unlit;
-
-    Tile currentTile;
+    private GameConfig.PlayerConfig config { get => GameManager.Instance.config.player; }
 
     private void Awake()
     {
         Instance = this;
 
         rb = GetComponent<Rigidbody>();
-
-#if !UNITY_EDITOR
-        baseSpeed = ConfigManager.appConfig.GetFloat("base_speed");
-        baseDash = ConfigManager.appConfig.GetFloat("base_dash");
-#endif
     }
 
     private void Update()
     {
         if(Input.GetButtonDown("Jump"))
         {
-            rb.AddForce(rb.transform.forward * baseDash, ForceMode.Impulse);
+            rb.AddForce(rb.transform.forward * config.baseDash, ForceMode.Impulse);
             onDash.Invoke();
         }
         if(Input.GetKeyDown(KeyCode.E))
@@ -63,7 +50,7 @@ public class PlayerController : MonoBehaviour
 
         if(moveDirection.magnitude > 0.5f)
         {
-            Quaternion target = SmoothDamp(transform.rotation, Quaternion.LookRotation(moveDirection), ref lookRotation, baseRotationSpeed);
+            Quaternion target = SmoothDamp(transform.rotation, Quaternion.LookRotation(moveDirection), ref lookRotation, config.baseRotationSpeed);
 
             rb.MoveRotation(target);
         }
