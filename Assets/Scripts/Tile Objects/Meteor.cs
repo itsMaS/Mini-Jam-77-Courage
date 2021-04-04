@@ -4,19 +4,33 @@ using UnityEngine;
 
 public class Meteor : TileObject
 {
-    [SerializeField] private Mesh[] States = new Mesh[3];
+    private GameConfig.MeteorConfig config { get => GameManager.Instance.config.meteor; }
 
-    MeshRenderer mr;
+    [SerializeField] private Mesh[] Meteors;
+
+    MeshFilter mf;
     private void Awake()
     {
-        mr = GetComponentInChildren<MeshRenderer>();
+        mf = GetComponentInChildren<MeshFilter>();
+        Mesh randomMesh = Meteors[Random.Range(0, Meteors.Length)];
+        mf.mesh = randomMesh;
+        transform.rotation = Quaternion.Euler(0,Random.Range(0,360), 0);
+        DestroyImmediate(this.GetComponent<MeshCollider>());
+        var collider = gameObject.AddComponent<MeshCollider>();
+        collider.sharedMesh = randomMesh;
     }
     private void OnDestroy()
     {
+        tile.RemoveObject();
         MeteorController.Instance.MeteorDestroyed();
     }
     public void Land()
     {
         MapController.Instance.Pulse(tile);
+    }
+
+    public void Drill()
+    {
+
     }
 }

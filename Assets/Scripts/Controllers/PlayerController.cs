@@ -14,14 +14,25 @@ public class PlayerController : MonoBehaviour
     private float speed => config.baseSpeed;
     private Rigidbody rb;
     private Quaternion lookRotation;
+    private Quaternion neckRotation;
     private Tile currentTile;
+
+    [SerializeField] LayerMask miningMask;
+    [SerializeField] Transform drillPositionTr;
+    [SerializeField] MeshRenderer tracksMr;
+    [SerializeField] Animator robotBodyAn;
+    [SerializeField] AudioSource source;
+    [SerializeField] AnimationCurve pitchOverSpeed;
+    [SerializeField] Transform NeckTr;
+
+
+    private float traveledDistance;
 
     private GameConfig.PlayerConfig config { get => GameManager.Instance.config.player; }
 
     private void Awake()
     {
         Instance = this;
-
         rb = GetComponent<Rigidbody>();
     }
 
@@ -36,6 +47,18 @@ public class PlayerController : MonoBehaviour
         {
             MapController.Instance.Pulse(currentTile);
         }
+
+        float movementSpeed = rb.velocity.magnitude;
+        source.pitch = pitchOverSpeed.Evaluate(movementSpeed);
+
+        Vector3 targetPos = CameraController.Instance.worldPoint;
+        targetPos.y = NeckTr.position.y;
+        Quaternion target = SmoothDamp(NeckTr.rotation, Quaternion.LookRotation(targetPos - NeckTr.position, Vector3.up), ref neckRotation, 0.01f);
+
+        NeckTr.rotation = target;
+
+        traveledDistance += movementSpeed;
+        tracksMr.material.SetFloat("_distance", traveledDistance);
     }
 
     private void FixedUpdate()
@@ -55,10 +78,20 @@ public class PlayerController : MonoBehaviour
             rb.MoveRotation(target);
         }
         
-        //ALTERNATIVE MOVEMENT
         rb.AddForce(speed * moveDirection.magnitude * transform.forward);
-        
-        //rb.AddForce(speed * moveDirection);
+
+
+        RaycastHit hit;
+        if (Physics.Raycast(drillPositionTr.position, drillPositionTr.TransformDirection(Vector3.forward), out hit, config.baseDrillRange, miningMask))
+        {
+            Debug.DrawRay(drillPositionTr.position, drillPositionTr.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+            robotBodyAn.SetBool("Drilling", true);
+        }
+        else
+        {
+            Debug.DrawRay(drillPositionTr.position, drillPositionTr.TransformDirection(Vector3.forward) * config.baseDrillRange, Color.white);
+            robotBodyAn.SetBool("Drilling", false);
+        }
     }
 
     private void OnTriggerEnter(Collider other)

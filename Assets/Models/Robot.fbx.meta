@@ -2,7 +2,94 @@ fileFormatVersion: 2
 guid: 1d174ab8985a20e49816619e52865691
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -6134382550982817379
+    second: kaireAction
+  - first:
+      74: 317599682029101583
+    second: kaklas.001Action
+  - first:
+      74: -4725560373810916666
+    second: desineAction
+  - first:
+      74: -5275167386865438019
+    second: "k\u016Bnas|CircleAction.001"
+  - first:
+      74: -1147671132211608408
+    second: "k\u016Bnas|kaireAction"
+  - first:
+      74: -8502810769354131824
+    second: "k\u016Bnas|kaklas.001Action"
+  - first:
+      74: -359618272553315812
+    second: Circle|CircleAction.001
+  - first:
+      74: 6541900824775169377
+    second: Circle|kaklas.001Action
+  - first:
+      74: 2048379578088618661
+    second: kaire|CircleAction.001
+  - first:
+      74: 936429588356226676
+    second: kaire|desineAction
+  - first:
+      74: -1566216337431288523
+    second: kaire|kaireAction
+  - first:
+      74: 4277626013044221349
+    second: kaire|kaklas.001Action
+  - first:
+      74: -1947648453018370785
+    second: kaire|PoseLib
+  - first:
+      74: -8117841107897439501
+    second: kaire|PoseLib.001
+  - first:
+      74: 271464064799458840
+    second: ranka.k.002|CircleAction.001
+  - first:
+      74: 4304455633751990685
+    second: ranka.k.002|desineAction
+  - first:
+      74: 6919570888569445003
+    second: ranka.k.002|kaklas.001Action
+  - first:
+      74: 4819960833303778808
+    second: kaklas.001|CircleAction.001
+  - first:
+      74: 3051123451146973126
+    second: kaklas.001|kaklas.001Action
+  - first:
+      74: -5482307886551019096
+    second: desine|CircleAction.001
+  - first:
+      74: 762394812036501130
+    second: desine|desineAction
+  - first:
+      74: -7338015354075995205
+    second: desine|kaireAction
+  - first:
+      74: -4803099113048049376
+    second: desine|kaklas.001Action
+  - first:
+      74: 234562160626130982
+    second: desine|PoseLib
+  - first:
+      74: 1624229771696216164
+    second: desine|PoseLib.001
+  - first:
+      74: -623603649343465320
+    second: Idle
+  - first:
+      74: 4067771817028689011
+    second: Take out drill
+  - first:
+      74: 1809189755708902092
+    second: Drilling
+  - first:
+      74: -5991766398451773214
+    second: Take back drill
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -30,7 +117,123 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Scene
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 249
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Take out drill
+      takeName: Scene
+      internalID: 0
+      firstFrame: 251
+      lastFrame: 281
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Drilling
+      takeName: Scene
+      internalID: 0
+      firstFrame: 281
+      lastFrame: 304
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Take back drill
+      takeName: Scene
+      internalID: 0
+      firstFrame: 305
+      lastFrame: 376
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []

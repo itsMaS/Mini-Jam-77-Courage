@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Game config
   m_EditorClassIdentifier: 
   player:
-    baseSpeed: 150
-    baseDash: 50
-    baseRotationSpeed: 0.1
+    baseSpeed: 40
+    baseDash: 30
+    baseRotationSpeed: 0.2
+    baseDrillRange: 2
   meteor:
     baseMaxMeteors: 10
     baseSpawnInterval: 10

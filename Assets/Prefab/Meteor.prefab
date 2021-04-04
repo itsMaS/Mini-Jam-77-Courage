@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3120270579221183065}
   - component: {fileID: 727810211755988113}
   - component: {fileID: 4005694609774164662}
-  - component: {fileID: 935529294}
   - component: {fileID: 935529290}
-  m_Layer: 0
+  - component: {fileID: 7720002325979008186}
+  m_Layer: 6
   m_Name: Meteor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,20 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &935529294
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6515247407593983833}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -3159100676091791569, guid: 281bf25815ef61b40a3b1023b42587a5, type: 3}
 --- !u!114 &935529290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,6 +225,20 @@ MonoBehaviour:
   optionalRotationMode: 0
   optionalScrambleMode: 0
   optionalString: 
+--- !u!64 &7720002325979008186
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6515247407593983833}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3159100676091791569, guid: 281bf25815ef61b40a3b1023b42587a5, type: 3}
 --- !u!1 &8588212136397311900
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 8588212136397311901}
   - component: {fileID: 8588212136397311898}
   - component: {fileID: 3189709104896665226}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Meteor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -286,10 +286,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tile: {fileID: 0}
-  States:
+  Meteors:
   - {fileID: -3159100676091791569, guid: 281bf25815ef61b40a3b1023b42587a5, type: 3}
-  - {fileID: 4981269160176783302, guid: 281bf25815ef61b40a3b1023b42587a5, type: 3}
   - {fileID: -1597154318440032205, guid: 281bf25815ef61b40a3b1023b42587a5, type: 3}
+  - {fileID: 4981269160176783302, guid: 281bf25815ef61b40a3b1023b42587a5, type: 3}
+  - {fileID: -6534858314424768818, guid: 281bf25815ef61b40a3b1023b42587a5, type: 3}
+  - {fileID: -5318419124825709249, guid: 281bf25815ef61b40a3b1023b42587a5, type: 3}
+  - {fileID: -7064126019218388861, guid: 281bf25815ef61b40a3b1023b42587a5, type: 3}
+  - {fileID: -5274743865479984453, guid: 281bf25815ef61b40a3b1023b42587a5, type: 3}
+  - {fileID: 4154270833776937141, guid: 281bf25815ef61b40a3b1023b42587a5, type: 3}
+  - {fileID: -5126586803379198679, guid: 281bf25815ef61b40a3b1023b42587a5, type: 3}
 --- !u!114 &3189709104896665226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,6 +400,10 @@ PrefabInstance:
     - target: {fileID: 1163283490502796603, guid: c3112ae6953a5084aa3d6856334eaa93, type: 3}
       propertyPath: m_Name
       value: Smoke Ring
+      objectReference: {fileID: 0}
+    - target: {fileID: 1163283490502796603, guid: c3112ae6953a5084aa3d6856334eaa93, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3112ae6953a5084aa3d6856334eaa93, type: 3}

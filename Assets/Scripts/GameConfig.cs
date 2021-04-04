@@ -11,6 +11,7 @@ public class GameConfig : ScriptableObject
         public float baseSpeed;
         public float baseDash;
         public float baseRotationSpeed;
+        public float baseDrillRange;
     }
     [System.Serializable]
     public class MeteorConfig

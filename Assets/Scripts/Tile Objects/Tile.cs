@@ -37,4 +37,8 @@ public class Tile : MonoBehaviour
         tileObject.tile = this;
         this.tileObject = tileObject;
     }
+    public void RemoveObject()
+    {
+        tileObject = null;
+    }
 }

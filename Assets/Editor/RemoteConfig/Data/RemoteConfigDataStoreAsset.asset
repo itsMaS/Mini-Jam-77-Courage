@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"41a63666-ee0e-42ca-a1b0-095ae89de69b\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"configuration\",\r\n      \"value\":
-    {\r\n        \"player\": {\r\n          \"baseSpeed\": 50.0,\r\n          \"baseDash\":
+    {\r\n        \"player\": {\r\n          \"baseSpeed\": 20.0,\r\n          \"baseDash\":
     50.0,\r\n          \"baseRotationSpeed\": 0.10000000149011612\r\n        },\r\n       
     \"meteor\": {\r\n          \"baseMaxMeteors\": 10,\r\n          \"baseSpawnInterval\":
     10.0\r\n        }\r\n      },\r\n      \"type\": \"json\"\r\n    }\r\n  }\r\n]"
