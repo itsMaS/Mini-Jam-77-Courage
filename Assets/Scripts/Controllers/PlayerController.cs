@@ -18,17 +18,23 @@ public class PlayerController : MonoBehaviour
     private Tile currentTile;
 
     [SerializeField] LayerMask miningMask;
+    [SerializeField] LayerMask laserMask;
     [SerializeField] Transform drillPositionTr;
     [SerializeField] MeshRenderer tracksMr;
     [SerializeField] Animator robotBodyAn;
     [SerializeField] AudioSource source;
     [SerializeField] AnimationCurve pitchOverSpeed;
     [SerializeField] Transform NeckTr;
+    public Transform GunTr;
+    [SerializeField] Transform Laser;
 
 
     private float traveledDistance;
 
     private GameConfig.PlayerConfig config { get => GameManager.Instance.config.player; }
+
+    public bool isMining { get; private set; }
+
 
     private void Awake()
     {
@@ -53,16 +59,52 @@ public class PlayerController : MonoBehaviour
 
         Vector3 targetPos = CameraController.Instance.worldPoint;
         targetPos.y = NeckTr.position.y;
-        Quaternion target = SmoothDamp(NeckTr.rotation, Quaternion.LookRotation(targetPos - NeckTr.position, Vector3.up), ref neckRotation, 0.01f);
+        Quaternion target = SmoothDamp(NeckTr.rotation, Quaternion.LookRotation(targetPos - NeckTr.position, Vector3.up), ref neckRotation, config.baseNeckRotationSpeed);
 
         NeckTr.rotation = target;
 
-        traveledDistance += movementSpeed;
+        traveledDistance += movementSpeed*Time.deltaTime*400;
         tracksMr.material.SetFloat("_distance", traveledDistance);
+
+        if(Input.GetMouseButton(0))
+        {
+            Laser.gameObject.SetActive(true);
+        }
+        else
+        {
+            Laser.gameObject.SetActive(false);
+        }
     }
 
+    private void ShootLaser()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(Laser.position, Laser.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, laserMask))
+        {
+            if(hit.transform.TryGetComponent<IDamagable>(out IDamagable damagable))
+            {
+                damagable.DealDamage(config.baseDamagePerSecond * Time.deltaTime);
+            }
+            Debug.DrawRay(Laser.position, Laser.TransformDirection(Vector3.forward) * hit.distance, Color.red);
+            Vector3 scale = Laser.GetChild(0).transform.localScale;
+            scale.z = hit.distance;
+            Laser.GetChild(0).transform.localScale = scale;
+        }
+        else
+        {
+            Debug.DrawRay(Laser.position, Laser.TransformDirection(Vector3.forward) * 1000, Color.blue);
+            Vector3 scale = Laser.GetChild(0).transform.localScale;
+            scale.z = 30;
+            Laser.GetChild(0).transform.localScale = scale;
+        }
+    }
     private void FixedUpdate()
     {
+        if(Input.GetMouseButton(0))
+        {
+            ShootLaser();
+        }
+
         Vector3 camForward = Vector3.ProjectOnPlane(CameraController.Instance.cam.transform.forward, Vector3.up).normalized;
         Vector3 camRight = Vector3.ProjectOnPlane(CameraController.Instance.cam.transform.right, Vector3.up).normalized;
 
@@ -80,18 +122,25 @@ public class PlayerController : MonoBehaviour
         
         rb.AddForce(speed * moveDirection.magnitude * transform.forward);
 
+        Mining();
+    }
 
+    void Mining()
+    {
         RaycastHit hit;
         if (Physics.Raycast(drillPositionTr.position, drillPositionTr.TransformDirection(Vector3.forward), out hit, config.baseDrillRange, miningMask))
         {
             Debug.DrawRay(drillPositionTr.position, drillPositionTr.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
             robotBodyAn.SetBool("Drilling", true);
+            isMining = true;
         }
         else
         {
             Debug.DrawRay(drillPositionTr.position, drillPositionTr.TransformDirection(Vector3.forward) * config.baseDrillRange, Color.white);
             robotBodyAn.SetBool("Drilling", false);
+            isMining = false;
         }
+        drillPositionTr.gameObject.SetActive(isMining);
     }
 
     private void OnTriggerEnter(Collider other)

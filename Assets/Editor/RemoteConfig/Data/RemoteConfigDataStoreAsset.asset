@@ -12,18 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
   m_Name: RemoteConfigDataStoreAsset
   m_EditorClassIdentifier: 
-  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"41a63666-ee0e-42ca-a1b0-095ae89de69b\"\r\n   
-    },\r\n    \"rs\": {\r\n      \"key\": \"configuration\",\r\n      \"value\":
-    {\r\n        \"player\": {\r\n          \"baseSpeed\": 20.0,\r\n          \"baseDash\":
-    50.0,\r\n          \"baseRotationSpeed\": 0.10000000149011612\r\n        },\r\n       
-    \"meteor\": {\r\n          \"baseMaxMeteors\": 10,\r\n          \"baseSpawnInterval\":
-    10.0\r\n        }\r\n      },\r\n      \"type\": \"json\"\r\n    }\r\n  }\r\n]"
-  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"41a63666-ee0e-42ca-a1b0-095ae89de69b\"\r\n   
-    },\r\n    \"rs\": {\r\n      \"key\": \"configuration\",\r\n      \"value\":
-    {\r\n        \"player\": {\r\n          \"baseSpeed\": 50.0,\r\n          \"baseDash\":
-    50.0,\r\n          \"baseRotationSpeed\": 0.10000000149011612\r\n        },\r\n       
-    \"meteor\": {\r\n          \"baseMaxMeteors\": 10,\r\n          \"baseSpawnInterval\":
-    10.0\r\n        }\r\n      },\r\n      \"type\": \"json\"\r\n    }\r\n  }\r\n]"
+  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"b8e00d99-d5db-4ab4-89de-8ac5391b2e91\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"configuration\",\r\n      \"type\": \"json\",\r\n     
+    \"value\": {\r\n        \"player\": {\r\n          \"baseSpeed\": 40.0,\r\n         
+    \"baseDash\": 30.0,\r\n          \"baseRotationSpeed\": 0.20000000298023224,\r\n         
+    \"baseDrillRange\": 2.0,\r\n          \"baseNeckRotationSpeed\": 0.10000000149011612,\r\n         
+    \"baseShootingInterval\": 0.20000000298023224,\r\n          \"baseBulletSpeed\":
+    100.0,\r\n          \"baseDamagePerSecond\": 500.0\r\n        },\r\n        \"meteor\":
+    {\r\n          \"baseMaxMeteors\": 10,\r\n          \"baseSpawnInterval\": 10.0\r\n       
+    }\r\n      },\r\n      \"schemaId\": null\r\n    }\r\n  }\r\n]"
+  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"b8e00d99-d5db-4ab4-89de-8ac5391b2e91\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"configuration\",\r\n      \"type\": \"json\",\r\n     
+    \"value\": {\r\n        \"player\": {\r\n          \"baseSpeed\": 40.0,\r\n         
+    \"baseDash\": 30.0,\r\n          \"baseRotationSpeed\": 0.20000000298023224,\r\n         
+    \"baseDrillRange\": 2.0,\r\n          \"baseNeckRotationSpeed\": 0.10000000149011612,\r\n         
+    \"baseShootingInterval\": 0.20000000298023224,\r\n          \"baseBulletSpeed\":
+    100.0,\r\n          \"baseDamagePerSecond\": 500.0\r\n        },\r\n        \"meteor\":
+    {\r\n          \"baseMaxMeteors\": 10,\r\n          \"baseSpawnInterval\": 10.0\r\n       
+    }\r\n      },\r\n      \"schemaId\": null\r\n    }\r\n  }\r\n]"
   _environments: "[\r\n  {\r\n    \"projectId\": \"83f6d5b8-98a8-470c-ae66-07d56bddd74f\",\r\n   
     \"name\": \"Production\",\r\n    \"id\": \"c213efeb-3aaf-4368-934f-275da9b4a6cd\",\r\n   
     \"createdAt\": \"2021-04-02T12:36:29Z\",\r\n    \"updatedAt\": \"2021-04-02T12:36:29Z\",\r\n   

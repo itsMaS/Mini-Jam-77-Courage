@@ -17,6 +17,11 @@ MonoBehaviour:
     baseDash: 30
     baseRotationSpeed: 0.2
     baseDrillRange: 2
+    baseNeckRotationSpeed: 0.1
+    baseShootingInterval: 0.2
+    baseBulletSpeed: 100
+    baseDamagePerSecond: 500
   meteor:
     baseMaxMeteors: 10
-    baseSpawnInterval: 10
+    baseSpawnInterval: 2
+    meteorMineralAmount: {x: 0, y: 0}

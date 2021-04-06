@@ -16,7 +16,7 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
-        Plane m_Plane = new Plane(Vector3.up, Vector3.zero);
+        Plane m_Plane = new Plane(Vector3.up, PlayerController.Instance.GunTr.position);
 
         //Create a ray from the Mouse click position
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);

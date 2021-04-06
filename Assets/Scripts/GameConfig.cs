@@ -12,12 +12,17 @@ public class GameConfig : ScriptableObject
         public float baseDash;
         public float baseRotationSpeed;
         public float baseDrillRange;
+        public float baseNeckRotationSpeed;
+        public float baseShootingInterval;
+        public float baseBulletSpeed;
+        public float baseDamagePerSecond;
     }
     [System.Serializable]
     public class MeteorConfig
     {
         public int baseMaxMeteors;
         public float baseSpawnInterval;
+        public Vector2 meteorMineralAmount;
     }
 
     public PlayerConfig player;

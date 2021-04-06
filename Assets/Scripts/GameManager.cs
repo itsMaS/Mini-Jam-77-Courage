@@ -51,11 +51,20 @@ public class GameManager : MonoBehaviour
     private void ConfigLoaded(ConfigResponse obj)
     {
         Debug.Log($"Initializing Complete!");
+#if !UNITY_EDITOR
+        string jsonConfig = ConfigManager.appConfig.GetJson("configuration");
+        config = GameConfig.CreateFromJSON(jsonConfig);
+#endif
         if(SceneManager.GetActiveScene().buildIndex <= 0)
         {
-            string jsonConfig = ConfigManager.appConfig.GetJson("configuration");
-            config = GameConfig.CreateFromJSON(jsonConfig);
             SceneManager.LoadScene(1);
+        }
+    }
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.F1))
+        {
+            LoadConfig();
         }
     }
 }
